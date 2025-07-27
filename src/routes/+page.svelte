@@ -1,10 +1,28 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { Button, Card, Navigation } from '$lib/components';
 
 	let isLoaded = false;
+	let isVisible = false;
 
 	onMount(() => {
 		isLoaded = true;
+		
+		// Intersection Observer for lazy loading
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					isVisible = true;
+					observer.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.1 });
+
+		// Observe sections for lazy loading
+		const sections = document.querySelectorAll('section');
+		sections.forEach(section => observer.observe(section));
+
+		return () => observer.disconnect();
 	});
 
 	const features = [
@@ -64,47 +82,20 @@
 
 <div class="min-h-screen geometric-bg">
 	<!-- Navigation -->
-	<nav class="fixed top-0 w-full z-50 geometric-nav">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="flex justify-between items-center h-16">
-				<div class="flex items-center space-x-2">
-					<div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
-						<span class="text-white font-bold text-lg">L</span>
-					</div>
-					<span class="text-white font-bold text-xl">Learn to do</span>
-				</div>
-				<div class="hidden md:flex items-center space-x-8">
-					<a
-						href="#features"
-						class="text-slate-300 hover:text-white transition-colors duration-300"
-					>
-						Features
-					</a>
-					<a
-						href="#about"
-						class="text-slate-300 hover:text-white transition-colors duration-300"
-					>
-						About
-					</a>
-					<a
-						href="#contact"
-						class="text-slate-300 hover:text-white transition-colors duration-300"
-					>
-						Contact
-					</a>
-					<a
-						href="/typing-test"
-						class="text-slate-300 hover:text-white transition-colors duration-300"
-					>
-						Typing Test
-					</a>
-					<button class="geometric-btn">
-						Get Started
-					</button>
-				</div>
-			</div>
-		</div>
-	</nav>
+	<Navigation
+		brand="Learn to do"
+		brandIcon="L"
+		brandHref="/"
+		items={[
+			{ label: 'Features', href: '#features' },
+			{ label: 'About', href: '#about' },
+			{ label: 'Contact', href: '#contact' },
+			{ label: 'Typing Test', href: '/typing-test' }
+		]}
+		actions={[
+			{ label: 'Get Started', variant: 'primary', size: 'sm' }
+		]}
+	/>
 
 	<!-- Hero Section -->
 	<section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
@@ -120,12 +111,12 @@
 					Transform your life by mastering new skills. Track your progress, earn achievements, and join a community of passionate learners.
 				</p>
 				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-					<button class="geometric-btn text-lg px-8 py-4">
+					<Button size="lg" variant="primary">
 						Start Learning Free
-					</button>
-					<button class="geometric-input border-2 border-slate-500 text-slate-300 px-8 py-4 text-lg font-semibold hover:border-blue-500 hover:text-white">
+					</Button>
+					<Button size="lg" variant="outline">
 						Watch Demo
-					</button>
+					</Button>
 				</div>
 			</div>
 		</div>
