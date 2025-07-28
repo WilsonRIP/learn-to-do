@@ -4,7 +4,7 @@
 	import Button from '../ui/button/Button.svelte';
 	import Card from '../ui/card/Card.svelte';
 	import Input from '../ui/input/Input.svelte';
-	import ProgressBar from '../ui/progress/ProgressBar.svelte';
+	import Progress from '../ui/progress/ProgressBar.svelte';
 
 	export let difficulties: Array<{ value: string; label: string; words: string[] }> = [];
 	export let durations: Array<{ value: number; label: string }> = [];
@@ -232,7 +232,7 @@
 
 			<!-- Progress Bar -->
 			<div class="progress-container">
-				<ProgressBar
+				<Progress
 					value={currentIndex}
 					max={currentText.length}
 					showLabel={true}

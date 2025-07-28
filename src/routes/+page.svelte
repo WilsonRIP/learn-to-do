@@ -87,10 +87,11 @@
 		brandIcon="L"
 		brandHref="/"
 		items={[
-			{ label: 'Features', href: '#features' },
-			{ label: 'About', href: '#about' },
-			{ label: 'Contact', href: '#contact' },
-			{ label: 'Typing Test', href: '/typing-test' }
+			{ label: 'Features', href: '/#features' },
+			{ label: 'About', href: '/#about' },
+			{ label: 'Contact', href: '/#contact' },
+			{ label: 'Typing Test', href: '/typing-test' },
+			{ label: 'Progress Demo', href: '/progress-demo' }
 		]}
 		actions={[
 			{ label: 'Get Started', variant: 'primary', size: 'sm' }
@@ -170,6 +171,74 @@
 		</div>
 	</section>
 
+	<!-- About Section -->
+	<section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+					About
+					<span class="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+						Learn to do
+					</span>
+				</h2>
+				<p class="text-xl text-slate-300 max-w-2xl mx-auto">
+					We're passionate about helping people master new skills and achieve their goals through innovative learning experiences.
+				</p>
+			</div>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+				<div class="geometric-card p-8">
+					<h3 class="text-2xl font-semibold text-white mb-4">Our Mission</h3>
+					<p class="text-slate-400 leading-relaxed">
+						To democratize learning by providing accessible, engaging, and effective tools that help people develop new skills and achieve their personal and professional goals.
+					</p>
+				</div>
+				<div class="geometric-card p-8">
+					<h3 class="text-2xl font-semibold text-white mb-4">Our Vision</h3>
+					<p class="text-slate-400 leading-relaxed">
+						A world where everyone has the tools and support they need to continuously learn, grow, and succeed in their chosen path.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section id="contact" class="py-20 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-4xl mx-auto">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+					Get in
+					<span class="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+						Touch
+					</span>
+				</h2>
+				<p class="text-xl text-slate-300 max-w-2xl mx-auto">
+					Have questions or feedback? We'd love to hear from you.
+				</p>
+			</div>
+			<div class="geometric-card p-12">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+					<div>
+						<h3 class="text-2xl font-semibold text-white mb-4">Contact Information</h3>
+						<div class="space-y-4 text-slate-400">
+							<p>📧 hello@learntodo.com</p>
+							<p>📱 +1 (555) 123-4567</p>
+							<p>📍 123 Learning Street, Education City, EC 12345</p>
+						</div>
+					</div>
+					<div>
+						<h3 class="text-2xl font-semibold text-white mb-4">Quick Links</h3>
+						<div class="space-y-2">
+							<a href="/support" class="block text-slate-400 hover:text-white transition-colors">Support Center</a>
+							<a href="/faq" class="block text-slate-400 hover:text-white transition-colors">FAQ</a>
+							<a href="/feedback" class="block text-slate-400 hover:text-white transition-colors">Send Feedback</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- CTA Section -->
 	<section class="py-20 px-4 sm:px-6 lg:px-8">
 		<div class="max-w-4xl mx-auto text-center">
@@ -199,19 +268,19 @@
 				</div>
 				<div class="flex space-x-6 text-slate-400">
 					<a
-						href="#"
+						href="/privacy"
 						class="hover:text-white transition-colors duration-300"
 					>
 						Privacy
 					</a>
 					<a
-						href="#"
+						href="/terms"
 						class="hover:text-white transition-colors duration-300"
 					>
 						Terms
 					</a>
 					<a
-						href="#"
+						href="/support"
 						class="hover:text-white transition-colors duration-300"
 					>
 						Support

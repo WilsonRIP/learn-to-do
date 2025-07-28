@@ -1,7 +1,8 @@
-import Root from "./ProgressBar.svelte";
+import ProgressBar from "./ProgressBar.svelte";
 
 export {
-	Root,
+	ProgressBar,
 	//
-	Root as Progress,
+	ProgressBar as Progress,
+	ProgressBar as Root,
 };
